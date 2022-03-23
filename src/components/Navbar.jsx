@@ -1,3 +1,6 @@
+import {NavLink} from "react-router-dom"
+
+
 const links = [
   {
     title: "Home",
@@ -6,7 +9,13 @@ const links = [
   //   add the other link as well
 ];
 export const Navbar = () => {
-  return {
-    //map through the link ad display it in header
-  };
+  return (
+    <>
+      <div>
+        <NavLink className={({isActive}) => isActive ? "active_class" : "non_active"} to="/">About</NavLink>
+        <NavLink className={({isActive}) => isActive ? "active_class" : "non_active"} to="/home">Home</NavLink>
+        <NavLink className={({isActive}) => isActive ? "active_class" : "non_active"} to="/singleproduct">Single Product</NavLink>
+      </div>
+    </>
+  )
 };
